@@ -1,0 +1,31 @@
+$primary: #323ee2;
+$accent: #00b788;
+$warn: #ff1235;
+
+$success: #115117;
+$success-text: #115117;
+$warning: #ffbc54;
+$warning-text: #ffbc54;
+$erro: #ff4040;
+$erro-text: #ff4040;
+$dark-grey: #474747;
+$light-grey: #d9d9d9;
+
+.text-primary {
+  color: $primary;
+}
+.text-accent {
+  color: $accent;
+}
+.text-warn {
+  color: $warn;
+}
+
+a {
+  color: initial;
+  text-decoration: none;
+}
+
+p {
+  color: #b6bac0;
+}
