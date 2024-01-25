@@ -1,0 +1,50 @@
+name: new-white-label
+
+permissions:
+  contents: write
+  deployments: write
+  repository-projects: write
+
+on:
+  workflow_dispatch:
+    inputs:
+      Env:
+        type: choice
+        required: true
+        description: Enviroment
+        default: 'hmg'
+        options:
+          - 'hmg'
+          - 'prd'
+      Product:
+        type: choice
+        required: true
+        description: Product
+        default: 'scf'
+        options:
+          - 'scf'
+          - 'credit'
+          - 'sf'
+          - 'spike'
+          - 'financial-management'
+      WLName:
+        required: true
+      WLJsonStyle:
+        required: true
+
+env:
+  LANG: 'pt_BR.UTF-8'
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - id: step1
+        run: |
+          echo "${{toJSON(inputs.WLJsonStyle)}}"
+
+      - name: Clean Workspace Folder
+        if: always()
+        run: |
+          rm -rf ./* || true
+          rm -rf ./.??* || true
