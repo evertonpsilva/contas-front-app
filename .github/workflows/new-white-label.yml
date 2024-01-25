@@ -41,7 +41,7 @@ jobs:
     steps:
       - id: step1
         run: |
-          echo "${{toJSON(inputs.WLJsonStyle)}}"
+          echo "${{inputs.WLJsonStyle}}"
 
       - name: Clean Workspace Folder
         if: always()
