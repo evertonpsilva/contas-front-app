@@ -42,7 +42,7 @@ jobs:
       - id: step1
         env:
           GITHUB_CONTEXT: ${{ toJson(inputs.WLJsonStyle) }}
-        run: prinft '$GITHUB_CONTEXT'
+        run: echo "$GITHUB_CONTEXT"
 
       - name: Clean Workspace Folder
         if: always()
