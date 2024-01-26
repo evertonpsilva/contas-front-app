@@ -40,8 +40,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - id: step1
-        run: |
-          echo "${{fromJson(inputs.WLJsonStyle)}}"
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+        run: echo "$GITHUB_CONTEXT"
 
       - name: Clean Workspace Folder
         if: always()
