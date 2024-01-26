@@ -41,7 +41,7 @@ jobs:
     steps:
       - id: step1
         env:
-          GITHUB_CONTEXT: ${{ toJson(github).event }}
+          GITHUB_CONTEXT: ${{ toJson(inputs) }}
         run: echo "$GITHUB_CONTEXT"
 
       - name: Clean Workspace Folder
